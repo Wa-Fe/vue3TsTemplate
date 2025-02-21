@@ -1,7 +1,16 @@
 {
   "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }],
+  "compilerOptions": {
+    "strict": true,               // 启用所有严格检查
+    "noImplicitAny": true,        // 禁止隐式 any
+    "strictNullChecks": true,     // 严格 null 检查
+    "strictFunctionTypes": true,   // 严格函数类型
+    "declaration": false,          // 生成声明文件
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src/**/*"]
 }

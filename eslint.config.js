@@ -17,7 +17,7 @@ export default tseslint.config(
   ...tseslint.configs.recommended,
   /** vue推荐配置 */
   ...eslintPluginVue.configs["flat/recommended"],
-
+  "src/auto-import.d.ts",
   /**
    * javascript 规则
    */
@@ -93,7 +93,7 @@ export default tseslint.config(
       "no-constant-binary-expression": 2, //禁止操作不影响值的表达式
       "no-cond-assign": 2, //禁止条件表达式中的赋值运算符
       "no-compare-neg-zero": 2, //禁止与 -0 进行比较
-      "no-useless-assignment": 2, //检测未使用的变量
+      "no-useless-assignment": 0, //检测未使用的变量
       "use-isnan": 2, //推荐使用isNaN方法，而不要直接和NaN作比较
       "for-direction": 2, //强制检测for循环的顺序，使其避免无限循环
       "object-curly-spacing": ["error", "always"], // 对象的括号保持一致的间距
@@ -117,7 +117,7 @@ export default tseslint.config(
       curly: 2, //强制所有控制语句使用一致的括号风格
       "no-fallthrough": 2, //switch 必须break
       "no-unused-labels": 2, //禁止未使用的标签
-      "no-use-before-define": 2, //变量必须先声明
+      "no-use-before-define": ["error",{"functions": false }], //变量必须先声明
       "array-bracket-spacing": [2, "never"], //在数组括号内强制保持一致的间距
       "brace-style": [2, "1tbs"], //one true brace style 是 JavaScript 中最常见的大括号风格之一，在这种风格中，一个块的开头大括号与它对应的语句或声明放在同一行中。比如说：
       "no-mixed-spaces-and-tabs": 2, //不允许在缩进时混合使用空格和制表符。
